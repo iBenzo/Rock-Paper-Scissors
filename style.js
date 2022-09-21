@@ -1,16 +1,24 @@
 
 /*
-make Get computer choice function
-Make round
-    make player selection 
-        Needs to take input
-        Make input all lowercase
-    computer selection  
-return a string the displays winner or loser\
-ensure it is case insensitive "rock, ROCK, RoCk"
-Make game with for loop to go 5 round and display overall winner
+make a Get computer choice function 
+    This will choose rock, paper,or scissors
+
+Make player choice function
+    This needs to prompt
+    Make sure it is case insensitive
+    Make sure the user can only enter rock, paper, or scissors before it moves on
+
+return a string the displays winner or loser for each round
+
+Make game with for loop to go 5 rounds and display overall winner
 */
 
+
+/*This is the variables to keep track of the score */
+let playerScore = 0;
+let computerScore = 0;
+
+/*This is the portion to get the two selections for the player and computer*/ 
 
 function getComputerChoice() {
     const choice = ['rock', 'paper', 'scissors'];
@@ -34,6 +42,8 @@ function getPlayerChoice() {
         getPlayerChoice()
     }
 }
+
+/* This is the round function to choose a winner and add to the score*/
 
 function playRound(playerSelection, computerSelection) {
     if(playerSelection === computerSelection){
@@ -67,7 +77,7 @@ function playRound(playerSelection, computerSelection) {
         }
     }
   }
-
+/*This is the whole 5 round game, it runs the selections, and adds the scores and round winner to the console log */
 function game(){
     for (let i = 0; i < 5; i++) {
     const playerSelection = getPlayerChoice();
@@ -80,6 +90,7 @@ function game(){
     console.log(gameWinner())
 }
 
+/*This is the function to decide the overall game winner */
 function gameWinner(){
     if(playerScore > computerScore){
         return 'Player wins game!'
@@ -92,8 +103,5 @@ function gameWinner(){
     }
 }
 
-let playerScore = 0;
-let computerScore = 0;
-
-
+/*This just runs the game function*/
 game()
