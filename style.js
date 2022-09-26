@@ -63,18 +63,6 @@ function playRound(playerSelection, computerSelection) {
         }
     }
   }
-/*This is the whole 5 round game, it runs the selections, and adds the scores and round winner to the console log */
-function game(){
-    for (let i = 0; i < 5; i++) {
-    const playerSelection = getPlayerChoice();
-    const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection))
-    console.log(playerScore)
-    console.log(computerScore)
-    }
-    gameWinner()
-    console.log(gameWinner())
-}
 
 /*This is the function to decide the overall game winner */
 function gameWinner(){

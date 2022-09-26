@@ -1,0 +1,59 @@
+body{
+    background-color: lightpink;
+}
+#scoreboard{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 900;
+}
+
+#buttonContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: lightgray;
+    padding: 50px;
+
+}
+
+.button{
+    height: 500px;
+    width: 500px;
+    background-color: lightblue;
+}
+
+#rock{
+    background-image: url(images/rock.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px 400px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
+#paper{
+    background-image: url(images/paper.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px 350px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
+#scissors{
+    background-image: url(images/pngegg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px 400px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
