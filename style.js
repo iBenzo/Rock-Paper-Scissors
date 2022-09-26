@@ -1,18 +1,4 @@
 
-/*
-make a Get computer choice function 
-    This will choose rock, paper,or scissors
-
-Make player choice function
-    This needs to prompt
-    Make sure it is case insensitive
-    Make sure the user can only enter rock, paper, or scissors before it moves on
-
-return a string the displays winner or loser for each round
-
-Make game with for loop to go 5 rounds and display overall winner
-*/
-
 
 /*This is the variables to keep track of the score */
 let playerScore = 0;
