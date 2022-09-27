@@ -78,4 +78,51 @@ function gameWinner(){
 }
 
 /*This just runs the game function*/
-game()
+/*game()
+*/
+
+/*This creates the buttons action and removes the homepage content*/
+const body = document.body;
+const div = document.createElement('div');
+const divTwo = document.createElement('div');
+const divThree = document.createElement('div');
+const divFour = document.createElement('div');
+const buttonRock = document.createElement('button');
+
+const buttonPaper = document.createElement('button');
+const buttonScissors = document.createElement('button');
+const computerScoreDisplayText = document.createElement('p');
+const playerScoreDisplayText = document.createElement('p');
+const head = document.createElement('h1');
+const header = document.querySelector('#title');
+const btn = document.querySelector('#playButton');
+const homePageContainer = document.querySelector('#homePage');
+btn.addEventListener('click',() => {
+    homePageContainer.remove();
+    header.remove();
+    btn.remove();
+
+    body.append(div);
+    div.setAttribute('id', 'playPage');
+
+    div.append(divTwo);
+    div.append(divThree);
+    divThree.setAttribute('id', 'divThree');
+
+    divTwo.append(head);
+    head.innerText = "Scoreboard";
+    divTwo.append(divFour);
+    
+    divFour.setAttribute('id', 'divFour');
+    divFour.append(computerScoreDisplayText);
+    computerScoreDisplayText.innerText = 'Computer score:';
+    divFour.append(playerScoreDisplayText);
+    playerScoreDisplayText.innerText = 'player score:';
+
+    divThree.append(buttonRock);
+    buttonRock.setAttribute('id', 'rock');
+    divThree.append(buttonPaper);
+    buttonPaper.setAttribute('id', 'paper');
+    divThree.append(buttonScissors);
+    buttonScissors.setAttribute('id', 'scissors');
+})

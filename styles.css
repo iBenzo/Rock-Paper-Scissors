@@ -1,59 +1,191 @@
+html { 
+    background: url(images/ombreBackground.png) no-repeat center center fixed; 
+    background-size: cover;
+}
+
 body{
-    background-color: lightpink;
-}
-#scoreboard{
+    height: 100vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    font-size: 50px;
-    font-weight: 900;
 }
-
-#buttonContainer{
+#homePage{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-    background-color: lightgray;
-    padding: 50px;
-
+    justify-content: space-between;
+    height: 700px;
+    width: 700px;
+    background-color: lightcyan;
+    padding: 30px;
+    border-radius: 20px;
+}
+#playButton{
+    width:200px;
+    height:70px;
+    background-color: #F9D0ED;
+    border-style: none;
+    color: #343E37;
+    font-size: 23px;
+    letter-spacing: 3px;
+    font-family: 'Lato';
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    padding: 0px;
+    overflow: hidden;
+    transition: all .5s;
+    box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+    border-radius: 7px;
+}
+#playButton span{
+    position: absolute;
+    display: block;
+}
+#playButton span:nth-child(1){
+    height: 5px;
+    width:200px;
+    top:0px;
+    left:-200px;
+    background: linear-gradient(to right, rgba(0,0,0,0), #AD09E2);
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span1 2s linear infinite;
+    animation-delay: 1s;
 }
 
-.button{
-    height: 500px;
-    width: 500px;
-    background-color: lightblue;
+@keyframes span1{
+    0%{
+        left:-200px
+    }
+    100%{
+        left:200px;
+    }
+}
+#playButton span:nth-child(2){
+    height: 70px;
+    width: 5px;
+    top:-70px;
+    right:0px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), yellow);
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span2 2s linear infinite;
+    animation-delay: 2s;
+}
+@keyframes span2{
+    0%{
+        top:-70px;
+    }
+    100%{
+        top:70px;
+    }
+}
+#playButton span:nth-child(3){
+    height:5px;
+    width:200px;
+    right:-200px;
+    bottom: 0px;
+    background: linear-gradient(to left, rgba(0,0,0,0), #7AFA75);
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    animation: span3 2s linear infinite;
+    animation-delay: 3s;
+}
+@keyframes span3{
+    0%{
+        right:-200px;
+    }
+    100%{
+        right: 200px;
+    }
+}
+
+#playButton span:nth-child(4){
+    height:70px;
+    width: 5px;
+    bottom:-70px;
+    left:0px;
+    background: linear-gradient(to top, rgba(0,0,0,0), #45FBFA);
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
+    animation: span4 2s linear infinite;
+    animation-delay: 4s;
+}
+@keyframes span4{
+    0%{
+        bottom: -70px;
+    }
+    100%{
+        bottom:70px;
+    }
+}
+
+#playButton:hover{
+    transition: all .5s;
+    transform: rotate(-3deg) scale(1.1);
+    box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+}
+#playButton:hover span{
+    animation-play-state: paused;
 }
 
 #rock{
     background-image: url(images/rock.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 400px 400px;
+    background-size: 200px 200px;
     display: flex;
     justify-content: center;
     padding: 20px;
     font-size: 30px;
     font-weight: 700;
+    height: 300px;
+    width: 300px;
 }
 #paper{
     background-image: url(images/paper.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 400px 350px;
+    background-size: 200px 200px;
     display: flex;
     justify-content: center;
     padding: 20px;
     font-size: 30px;
     font-weight: 700;
+    height: 300px;
+    width: 300px;
 }
 #scissors{
-    background-image: url(images/pngegg.png);
+    background-image: url(images/scissors.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 400px 400px;
+    background-size: 200px 200px;
     display: flex;
     justify-content: center;
     padding: 20px;
     font-size: 30px;
     font-weight: 700;
+    height: 300px;
+    width: 300px;
+}
+#playPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 700px;
+    width: 1200px;
+    background-color: lightcyan;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+#divThree{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#divFour{
+    display: flex;
 }
