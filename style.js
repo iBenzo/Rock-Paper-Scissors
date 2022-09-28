@@ -16,33 +16,53 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     if(playerSelection === computerSelection){
-        return 'It is a tie'
+        roundWinner.innerText = 'Its a tie!'
+        computerChoice.innerText = `Computer chose: ${computerSelection}`
+        playerChoice.innerText = `player chose: ${playerSelection}`
     }
     else if(playerSelection == 'rock'){
         if(computerSelection == 'paper'){
             computerScore++;
             computerScoreDisplayText.innerText = `Computer score: ${computerScore}`;
+            roundWinner.innerText = 'Paper beats rock! Computer Wins!'
+            computerChoice.innerText = `Computer chose: ${computerSelection}`
+            playerChoice.innerText = `player chose: ${playerSelection}`
         }else{
             playerScore++
             playerScoreDisplayText.innerText = `player score: ${playerScore}`; 
+            roundWinner.innerText = 'Rock beats scissors! Player Wins!'
+            computerChoice.innerText = `Computer chose: ${computerSelection}`
+            playerChoice.innerText = `player chose: ${playerSelection}`
         }
     }
     else if(playerSelection == 'paper'){
         if(computerSelection == 'scissors'){
             computerScore++;
             computerScoreDisplayText.innerText = `Computer score: ${computerScore}`;
+            roundWinner.innerText = 'Scissors beat Paper! Computer Wins!'
+            computerChoice.innerText = `Computer chose: ${computerSelection}`
+            playerChoice.innerText = `player chose: ${playerSelection}`
         }else{
             playerScore++
             playerScoreDisplayText.innerText = `player score: ${playerScore}`;
+            roundWinner.innerText = 'Paper beats rock! Player Wins!'
+            computerChoice.innerText = `Computer chose: ${computerSelection}`
+            playerChoice.innerText = `player chose: ${playerSelection}`
         }
     }
     else if(playerSelection == 'scissors'){
         if(computerSelection == 'rock'){
             computerScore++;
             computerScoreDisplayText.innerText = `Computer score: ${computerScore}`;
+            roundWinner.innerText = 'Rock beats scissors! Computer Wins!'
+            computerChoice.innerText = `Computer chose: ${computerSelection}`
+            playerChoice.innerText = `player chose: ${playerSelection}`
         }else{
             playerScore++
             playerScoreDisplayText.innerText = `player score: ${playerScore}`;
+            roundWinner.innerText = 'Scissors beat paper! Player Wins!'
+            computerChoice.innerText = `Computer chose: ${computerSelection}`
+            playerChoice.innerText = `player chose: ${playerSelection}`
         }
     }
   }
@@ -69,8 +89,9 @@ const div = document.createElement('div');
 const divTwo = document.createElement('div');
 const divThree = document.createElement('div');
 const divFour = document.createElement('div');
+const divFive = document.createElement('div');
 const buttonRock = document.createElement('button');
-
+const roundWinner = document.createElement('h3');
 
 const buttonPaper = document.createElement('button');
 const buttonScissors = document.createElement('button');
@@ -80,6 +101,8 @@ const head = document.createElement('h1');
 const header = document.querySelector('#title');
 const btn = document.querySelector('#playButton');
 const homePageContainer = document.querySelector('#homePage');
+const playerChoice = document.createElement('p');
+const computerChoice = document.createElement('p');
 
 btn.addEventListener('click',() => {
     //removes first page
@@ -92,6 +115,7 @@ btn.addEventListener('click',() => {
     //sets up the layout for the playing page
     div.append(divTwo);
     div.append(divFour);
+    div.append(divFive);
     div.append(divThree);
     divThree.setAttribute('id', 'divThree');
     divTwo.append(head);
@@ -113,6 +137,14 @@ btn.addEventListener('click',() => {
     divThree.append(buttonScissors);
     buttonScissors.setAttribute('id', 'scissors');
     buttonScissors.innerText = 'scissors';    
+
+    divFive.append(computerChoice, playerChoice, roundWinner);
+    divFive.setAttribute('id', 'divFive');
+    playerChoice.innerText = "player chose";
+    computerChoice.innerText = 'comp chose';
+    roundWinner.innerText = 'The round winner is'
+ 
+
 
     //Creates the click action of rock selection
     const rockBtn = document.querySelector('#rock');

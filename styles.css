@@ -153,7 +153,7 @@ body{
     background-image: url(./images/paper.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 200px 200px;
+    background-size: 200px 175px;
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -167,7 +167,7 @@ body{
     background-image: url(./images/scissors.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 200px 200px;
+    background-size: 200px 175px;
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -204,4 +204,11 @@ body{
     justify-content: space-evenly;
     font-size: 26px;
     margin-top: 0px;
+}
+
+#divFive{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
