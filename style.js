@@ -68,16 +68,11 @@ function playRound(playerSelection, computerSelection) {
   }
 
 /*This is the function to decide the overall game winner */
-function gameWinner(){
-    if(playerScore > computerScore){
-        return 'Player wins game!'
-    }
-    else if (computerScore > playerScore){
-        return 'Computer wins game :('
-    }
-    else{
-        return 'It is a tie!'
-    }
+function updatePlayerScore(){
+    playerScoreDisplayText.innerText = `player score: ${playerScore}`;
+}
+function updateComputerScore(){
+    computerScoreDisplayText.innerText = `Computer score: ${computerScore}`;
 }
 
 /*This just runs the game function*/
@@ -140,8 +135,8 @@ btn.addEventListener('click',() => {
 
     divFive.append(computerChoice, playerChoice, roundWinner);
     divFive.setAttribute('id', 'divFive');
-    playerChoice.innerText = "player chose";
-    computerChoice.innerText = 'comp chose';
+    playerChoice.innerText = "Player chose";
+    computerChoice.innerText = 'Computer chose';
     roundWinner.innerText = 'The round winner is'
  
 
@@ -152,6 +147,29 @@ btn.addEventListener('click',() => {
         let playerSelection = 'rock';
         const computerSelection = getComputerChoice();
         playRound(playerSelection, computerSelection);
+        if (playerScore == 5){
+            alert('Player has Won!');
+            playerScore = 0
+            computerScore = 0;
+            computerScoreDisplayText.innerText = `Computer score: ${computerScore}`;
+            playerScoreDisplayText.innerText = `player score: ${playerScore}`;
+            computerChoice.innerText = `Computer chose:`;
+            playerChoice.innerText = `Player chose:`
+            roundWinner.innerText = `Round winner:`
+        }
+        else if (computerScore == 5){
+            alert('Computer has Won!')
+            playerScore = 0
+            computerScore = 0;
+            computerScoreDisplayText.innerText = `Computer score: ${computerScore}`;
+            playerScoreDisplayText.innerText = `player score: ${playerScore}`;
+            computerChoice.innerText = `Computer chose:`;
+            playerChoice.innerText = `Player chose:`
+            roundWinner.innerText = `Round winner:`
+        }
+        else{
+            return 'Error';
+        }
     })
 
     //Creates the click action of paper selection
@@ -160,6 +178,29 @@ btn.addEventListener('click',() => {
         let playerSelection = 'paper';
         const computerSelection = getComputerChoice();
         playRound(playerSelection, computerSelection);
+        if (playerScore == 5){
+            alert('Player has Won!');
+            playerScore = 0
+            computerScore = 0;
+            computerScoreDisplayText.innerText = `Computer score: ${computerScore}`;
+            playerScoreDisplayText.innerText = `player score: ${playerScore}`;
+            computerChoice.innerText = `Computer chose:`;
+            playerChoice.innerText = `Player chose:`
+            roundWinner.innerText = `Round winner:`
+        }
+        else if (computerScore == 5){
+            alert('Computer has Won!')
+            playerScore = 0
+            computerScore = 0;
+            computerScoreDisplayText.innerText = `Computer score: ${computerScore}`;
+            playerScoreDisplayText.innerText = `player score: ${playerScore}`;
+            computerChoice.innerText = `Computer chose:`;
+            playerChoice.innerText = `Player chose:`
+            roundWinner.innerText = `Round winner:`
+        }
+        else{
+            return 'Error';
+        }
     })
 
     //Creates the click action of scissors selection
@@ -168,5 +209,28 @@ btn.addEventListener('click',() => {
         let playerSelection = 'scissors';
         const computerSelection = getComputerChoice();
         playRound(playerSelection, computerSelection);
+        if (playerScore == 5){
+            alert('Player has Won!');
+            playerScore = 0
+            computerScore = 0;
+            computerScoreDisplayText.innerText = `Computer score: ${computerScore}`;
+            playerScoreDisplayText.innerText = `player score: ${playerScore}`;
+            computerChoice.innerText = `Computer chose:`;
+            playerChoice.innerText = `Player chose:`
+            roundWinner.innerText = `Round winner:`
+        }
+        else if (computerScore == 5){
+            alert('Computer has Won!')
+            playerScore = 0
+            computerScore = 0;
+            computerScoreDisplayText.innerText = `Computer score: ${computerScore}`;
+            playerScoreDisplayText.innerText = `player score: ${playerScore}`;
+            computerChoice.innerText = `Computer chose:`;
+            playerChoice.innerText = `Player chose:`
+            roundWinner.innerText = `Round winner:`
+        }
+        else{
+            return 'Error';
+        }
     })
 })
